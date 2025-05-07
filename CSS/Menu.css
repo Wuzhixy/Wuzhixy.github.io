@@ -1,0 +1,106 @@
+/* 菜单样式 */
+.menu {
+    display: flex;
+    /* 使用 Flexbox 布局 */
+    flex-direction: row-reverse;
+    /* 菜单按钮从右向左排列 */
+    gap: 0.625rem;
+    /* 菜单按钮之间的间距 */
+    width: auto;
+    /* 菜单宽度自适应内容 */
+    margin-right: .175rem;
+    /* 在右侧添加外边距 */
+    font-size: 22px;
+    /* 基准字体大小 */
+}
+
+/* 菜单按钮样式 */
+.menu-button {
+    background-color: transparent;
+    /* 背景色透明 */
+    padding: 0.5rem 0.75rem;
+    /* 基础内边距 */
+    margin: 0 1vw;
+    /* 使用相对页面宽度的间距 */
+    text-decoration: none !important;
+    /* 移除默认下划线 */
+    color: white;
+    /* 文字颜色 */
+    font-size:
+        /* 无边框 */
+        text-align： center;
+    /* 文字居中对齐 */
+    display: inline-flex;
+    /* 内联弹性布局 */
+    justify-content: center;
+    /* 水平居中对齐 */
+    align-items: center;
+    /* 垂直居中对齐 */
+    height: auto;
+    /* 高度自适应内容 */
+    width: auto;
+    /* 宽度自适应内容 */
+    font-size: 18px;
+    /* 设置字体大小 */
+    letter-spacing: 7px;
+    /* 设置字间距 */
+    text-decoration: none;
+    /* 去掉默认的下划线 */
+    transition: all 0.3s ease;
+    /* 添加过渡效果，平滑的变化 */
+}
+
+.menu-button:hover {
+    transform: scale(1.1);
+    /* 放大 5% */
+    transition: transform 0.2s ease;
+    /* 添加平滑动画效果 */
+}
+
+/* 拓展菜单样式 */
+.menu-item {
+    position: relative;
+    /* 使拓展菜单相对于菜单按钮定位 */
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: auto;
+    background-color: rgba(255, 255, 255, 0.048);
+    /* 半透明白色背景 */
+    z-index: 1;
+    font-size: 18px;
+    /* 设置字体大小 */
+    letter-spacing: 7px;
+    /* 设置字间距 */
+    text-decoration: none;
+    /* 去掉默认的下划线 */
+    transition: all 0.3s ease;
+    /* 添加过渡效果，平滑的变化 */
+}
+
+.dropdown a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    /* 文字居中对齐 */
+    background-color: transparent;
+    /* 拓展菜单项背景颜色 */
+    white-space: nowrap;
+}
+
+.dropdown a:hover {
+    transform: scale(1.1);
+    /* 放大 5% */
+    transition: transform 0.2s ease;
+    /* 添加平滑动画效果 */
+}
+
+.menu-item:hover .dropdown {
+    display: block;
+    /* 鼠标悬停时显示拓展菜单 */
+}

@@ -1,0 +1,66 @@
+/* 打字动画 */
+@keyframes typing {
+    from {
+        width: 0;
+        /* 动画开始时，文本宽度为0 */
+    }
+
+    to {
+        width: 100%;
+        /* 动画结束时，文本宽度为100% */
+    }
+}
+
+/* 打字效果容器 */
+.typing-container {
+    display: flex;
+    /* 使用 Flexbox 布局 */
+    justify-content: center;
+    /* 水平居中对齐子元素 */
+    align-items: center;
+    /* 垂直居中对齐子元素 */
+    width: 100%;
+    /* 宽度设置为父容器的 100% */
+    height: auto;
+    /* 高度根据内容自动调整 */
+    text-align: center;
+    /* 文本水平居中对齐 */
+    overflow: hidden;
+    /* 隐藏超出容器的内容 */
+    position: absolute;
+    /* 如果需要定位 */
+    top: 50%;
+    /* 垂直居中 */
+    left: 50%;
+    /* 水平居中 */
+    transform: translate(-50%, -50%);
+    /* 精确居中对齐 */
+}
+
+/* 打字效果文本 */
+.typing-text {
+    font-size: 77px;
+    font-weight: bold;
+    color: #ffffff;
+    white-space: nowrap;
+    /* 防止文本换行 */
+    overflow: hidden;
+    /* 隐藏溢出的文本 */
+    position: relative;
+    /* 设置相对定位，以便光标绝对定位 */
+    display: inline-block;
+    /* 使文本保持在一行 */
+    visibility: visible;
+    /* 文本可见 */
+    letter-spacing: 20px;
+    /* 调整字间距 */
+
+}
+
+/* 打字效果状态下的文本样式 */
+.typing-text.typing {
+    animation: typing 4s steps(30, end) 1 normal both;
+    /* 4秒完成打字动画，分30步执行 */
+    animation-fill-mode: forwards;
+    /* 保持动画的最终状态 */
+}

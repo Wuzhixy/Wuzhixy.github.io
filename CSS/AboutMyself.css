@@ -1,0 +1,35 @@
+/* 图片和文字布局容器 */
+.content-container {
+    display: flex;
+    align-items: center;
+    /* 垂直方向居中对齐内容 */
+    justify-content: space-between;
+    /* 可选：左右分布，或用 center */
+    gap: 40px;
+    /* 元素间距 */
+    padding: 40px 100px;
+    max-width: 1800px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+/* 图片样式 */
+.content-Project {
+    margin-right: 10px;
+    /* 图片和文字之间的间距 */
+}
+
+.content-text {
+    font-size: 1.125rem;
+    /* 等价于18px，更响应式 */
+    color: #ffffff;
+    line-height: 1.8;
+    /* 稍微紧凑一点更适合正文 */
+    max-width: 800px;
+    /* 限制最大宽度，避免大屏太长 */
+    margin: 0 auto;
+    padding: 0 20px;
+    /* 增加内边距适配小屏 */
+    text-align: justify;
+    /* 让文本左右对齐更工整 */
+}
