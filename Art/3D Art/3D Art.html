@@ -13,13 +13,9 @@
     <script src="../../../JavaScript/PhotoModal.js"></script> <!-- 引用外置JavaScript文件 -->
     <link rel="icon" type="image/png" sizes="32x32" href="../../../Favicon/moyai_1f5ff.png" />
 
-
-
-
-
     <style>
         body {
-            background-color: #535353;
+            background-color: #000000;
         }
     </style>
 </head>
@@ -50,11 +46,129 @@
         </div>
     </div>
 
+    <main class="main-content">
 
+        <div class="photo-gallery-container">
+            <div class="Photograph-title-container">
+                <p class="Photograph-title-text">自然系列（2025）</p>
+            </div>
+
+            <div class="photo-container">
+
+                <div class="photo-item">
+                    <img src="./Project Nature/XiangZhang.png" alt="Photo 1" onclick="openModal(event)">
+                </div>
+            </div>
+            <button class="scroll-button prev" onclick="scrollGallery(-1)">&#10094;</button>
+            <button class="scroll-button next" onclick="scrollGallery(1)">&#10095;</button>
+        </div>
+
+        <div class="photo-gallery-container">
+            <div class="Photograph-title-container">
+                <p class="Photograph-title-text">城市系列（2024）</p>
+            </div>
+
+            <div class="photo-container">
+                <div class="photo-item">
+                    <img src="../3D Art/Project City/居民楼.png" alt="Photo 1" onclick="openModal(event)">
+                </div>
+                <div class="photo-item">
+                    <img src="../3D Art/Project City/地铁.png" alt="Photo 1" onclick="openModal(event)">
+                </div>
+                <div class="photo-item">
+                    <img src="../3D Art/Project City/街道.png" alt="Photo 1" onclick="openModal(event)">
+                </div>
+            </div>
+
+            <button class="scroll-button prev" onclick="scrollGallery(-1)">&#10094;</button>
+            <button class="scroll-button next" onclick="scrollGallery(1)">&#10095;</button>
+        </div>
+
+        <div class="photo-gallery-container">
+            <div class="Photograph-title-container">
+                <p class="Photograph-title-text">日常系列（2024）</p>
+            </div>
+
+            <div class="photo-container">
+                <div class="photo-item">
+                    <img src="../3D Art/Project Daily/卧室.png" alt="Photo 1" onclick="openModal(event)">
+                </div>
+                <div class="photo-item">
+                    <img src="../3D Art/Project Daily/画室.png" alt="Photo 1" onclick="openModal(event)">
+                </div>
+
+            </div>
+            <button class="scroll-button prev" onclick="scrollGallery(-1)">&#10094;</button>
+            <button class="scroll-button next" onclick="scrollGallery(1)">&#10095;</button>
+        </div>
+
+        <div class="photo-gallery-container">
+            <div class="Photograph-title-container">
+                <p class="Photograph-title-text">风格化练习</p>
+            </div>
+
+            <div class="photo-container">
+                <div class="photo-item">
+                    <img src="./Project Nature/WuTong.png" alt="Photo 1" onclick="openModal(event)">
+                </div>
+            </div>
+            <button class="scroll-button prev" onclick="scrollGallery(-1)">&#10094;</button>
+            <button class="scroll-button next" onclick="scrollGallery(1)">&#10095;</button>
+        </div>
+
+        <div class="photo-gallery-container">
+            <div class="Photograph-title-container">
+                <p class="Photograph-title-text">零碎练习</p>
+            </div>
+
+            <div class="photo-container">
+                <div class="photo-item">
+                    <img src="./Project Practice/Lunar Surface.png" alt="Photo 1" onclick="openModal(event)">
+                </div>
+                <div class="photo-item">
+                    <img src="./Project Practice/Wine.png" alt="Photo 1" onclick="openModal(event)">
+                </div>
+                <div class="photo-item">
+                    <img src="./Project Practice/Donut Rendering.png" alt="Photo 1" onclick="openModal(event)">
+                </div>
+                <div class="photo-item">
+                    <img src="./Project Practice/Mask.png" alt="Photo 1" onclick="openModal(event)">
+                </div>
+
+            </div>
+            <button class="scroll-button prev" onclick="scrollGallery(-1)">&#10094;</button>
+            <button class="scroll-button next" onclick="scrollGallery(1)">&#10095;</button>
+        </div>
+
+    </main>
+
+    <!-- 模态框 -->
+    <div id="photoModal" class="Photo-modal">
+        <div class="Photo-modal-content">
+            <span class="Photo-close-btn" id="closeBtn">&times;</span>
+            <img id="modalImage" src="" alt="放大的图片">
+            <div class="Photo-watermark">WUZHI</div> <!-- 添加水印 -->
+        </div>
     </div>
-    <div class="typing-container">
-        <div class="typing-text typing">
-            关于3D美术作品，正在整理。</div>
+
+    <script src="/JavaScript/PhotoModal.js"></script>
+    <script>
+        document.querySelectorAll('.photo-gallery-container').forEach(container => {
+            const scrollContainer = container.querySelector('.photo-container');
+            const prevBtn = container.querySelector('.scroll-button.prev');
+            const nextBtn = container.querySelector('.scroll-button.next');
+
+            const scrollAmount = 300;
+
+            prevBtn.addEventListener('click', () => {
+                scrollContainer.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+            });
+
+            nextBtn.addEventListener('click', () => {
+                scrollContainer.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+            });
+        });
+    </script>
 </body>
 
 </html>

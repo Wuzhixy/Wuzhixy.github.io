@@ -42,3 +42,5 @@ document.getElementById('photoModal').onclick = function (event) {
         this.style.display = 'none';
     }
 }
+
+

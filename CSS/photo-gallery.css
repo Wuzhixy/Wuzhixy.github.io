@@ -1,165 +1,151 @@
-/* 相册容器 */
+/* === 相册容器 === */
 .photo-gallery-container {
-    top: 200px;
-    /* 顶部对齐 */
+    position: relative;
+    /* 相对于视口定位 */
+    top: 0;
     left: 0;
-    /* 左侧对齐 */
     width: calc(100% - 40px);
-    /* 宽度为 100% 减去左右 margin 的值 */
+    /* 宽度为100%减去左右margin */
     height: 400px;
     /* 固定高度 */
     margin: 20px;
-    /* 上下左右都留出 20px 的外边距 */
+    /* 四周外边距 */
     display: flex;
-    /* 使用弹性盒布局 */
     align-items: flex-start;
-    /* 竖直方向靠上对齐内容 */
+    /* 垂直靠上对齐内容 */
     justify-content: flex-start;
-    /* 水平方向左对齐内容 */
+    /* 水平左对齐内容 */
+    background-color: #161616;
+    /* 深色背景 */
     overflow: hidden;
     /* 隐藏超出容器的内容 */
-    background-color: #161616;
-    /* 示例背景色 */
 }
 
-/* 滚动按钮 */
+/* === 滚动按钮样式（左右箭头） === */
 .scroll-button {
-    position: fixed;
-    /* 固定定位，始终在视窗的左右两侧 */
+    position: absolute;
+    /* 绝对定位到容器内 */
     top: 50%;
     /* 垂直居中 */
     transform: translateY(-50%);
-    /* 垂直居中对齐 */
     background-color: rgba(0, 0, 0, 0.5);
-    /* 背景色为半透明黑色 */
+    /* 半透明黑色背景 */
     color: white;
-    /* 文字颜色为白色 */
+    /* 白色字体 */
     border: none;
-    /* 去除边框 */
+    /* 无边框 */
     padding: 10px;
-    /* 内边距为 10px */
     cursor: pointer;
-    /* 鼠标悬停时显示手型光标 */
     z-index: 10;
-    /* 设置层级 */
     font-size: 18px;
-    /* 字体大小为 18px */
 }
 
 /* 左侧按钮 */
 .scroll-button.prev {
     left: 10px;
-    /* 靠近容器左侧 */
 }
 
 /* 右侧按钮 */
 .scroll-button.next {
     right: 10px;
-    /* 靠近容器右侧 */
 }
 
-/* 相册名称容器 */
+/* === 相册标题容器 === */
 .Photograph-title-container {
     width: 100%;
-    /* 宽度为视口的 100% */
     height: 60px;
-    /* 固定高度 */
     padding: 20px;
-    /* 内边距为 20px */
     display: flex;
-    /* 使用弹性盒布局 */
     justify-content: flex-start;
-    /* 水平方向左对齐内容 */
     align-items: center;
-    /* 垂直居中内容 */
 }
 
-/* 文字设置，左对齐，字体缩小 */
+/* 相册标题文字 */
 .Photograph-title-text {
     font-size: 18px;
-    /* 字体大小为 18px */
     font-weight: bold;
-    /* 字体加粗 */
-    color: rgb(255, 255, 255);
-    /* 文字颜色为白色 */
+    color: #fff;
     text-transform: uppercase;
-    /* 将文本转换为大写 */
+    /* 全部转为大写 */
     width: 100%;
-    /* 宽度为视口的 100% */
     height: 100%;
-    /* 固定高度 */
 }
 
-/* 照片容器 */
+/* === 照片滚动区域容器 === */
 .photo-container {
     display: flex;
-    /* 使用弹性盒布局 */
-    width: auto;
-    /* 宽度自适应 */
-    height: 400px;
-    /* 固定高度 */
+    /* 弹性布局横向排列照片 */
     flex: 0 0 auto;
-    /* 防止容器缩放 */
+    /* 固定尺寸，禁止缩放 */
     align-items: center;
-    /* 竖直方向居中内容 */
+    height: 400px;
+    weight：auto;
     padding: 1% 7px;
-    /* 上下内边距为 1%，左右内边距为 20px */
     box-sizing: border-box;
-    /* 确保 padding 包含在总高度内 */
+
+    overflow-x: auto;
+    /* 横向滚动 */
+    overflow-y: hidden;
+    /* 禁止垂直滚动 */
+    scroll-behavior: smooth;
+    /* 平滑滚动 */
+
+    /* 隐藏滚动条：Webkit 浏览器（Chrome/Safari） */
+    scrollbar-width: none;
+    /* Firefox 隐藏滚动条 */
+    -ms-overflow-style: none;
+    /* IE/Edge 隐藏滚动条 */
 }
 
+.photo-container::-webkit-scrollbar {
+    display: none;
+    /* Chrome/Edge/Safari 隐藏滚动条 */
+}
 
-/* 照片项 */
+/* === 单张照片项目样式 === */
 .photo-item {
-    width: auto;
-    /* 宽度自适应 */
+    flex: 0 0 auto;
     height: 100%;
-    /* 高度为父容器的 100% */
     display: inline-block;
-    /* 以内联块级元素显示 */
     overflow: hidden;
-    /* 隐藏超出容器的内容 */
     transition: transform 0.3s ease;
-    /* 平滑过渡效果 */
+    /* 悬停缩放过渡 */
     scroll-snap-align: start;
-    /* 滚动对齐到开始位置 */
+    /* 滚动对齐 */
+    margin-right: 10px;
+    /* 每张图之间的间距 */
 }
 
-/* 鼠标悬停在照片项上的效果 */
+/* 鼠标悬停时放大图片项 */
 .photo-item:hover {
     transform: scale(1.05);
-    /* 放大效果，1.05 表示放大 5% */
+    /* 缩放 5% */
 }
 
-/* 确保照片完整展示 */
+/* 图片本身样式 */
 .photo-item img {
     width: 100%;
-    /* 宽度为父容器的 100% */
     height: 100%;
-    /* 高度为父容器的 100% */
     object-fit: contain;
-    /* 确保照片完整显示并保持比例，空白区域会显示背景色 */
+    /* 图片按比例缩放，完整显示 */
 }
 
+/* === 照片下方说明文字样式 === */
 .photo-caption {
     display: block;
-    /* 使元素成为块级元素 */
     margin-top: 100px;
     margin-left: auto;
     margin-right: auto;
-    /* 左右外边距自动对齐 */
     width: 600px;
-    /* 固定宽度 */
     font-size: 14px;
     color: #929292;
     text-align: center;
-    /* 文本居中对齐 */
 }
 
-
-/* 模态框 */
+/* === 模态框整体样式（点击图片时弹出） === */
 .Photo-modal {
     display: none;
+    /* 默认不显示 */
     position: fixed;
     z-index: 1000;
     left: 0;
@@ -167,13 +153,15 @@
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.8);
+    /* 半透明黑色背景 */
     justify-content: center;
     align-items: center;
 }
 
-/* 模态框内容 */
+/* 模态框中的图片容器 */
 .Photo-modal-content {
     background-color: #ffffff31;
+    /* 半透明白色背景 */
     padding: 10px;
     border-radius: 5px;
     display: flex;
@@ -191,39 +179,28 @@
     max-height: 100%;
 }
 
-/* 关闭按钮样式 */
+/* 关闭模态框按钮样式 */
 .Photo-close-btn {
     position: absolute;
-    /* 绝对定位，按钮相对于父容器定位 */
     top: 10px;
-    /* 距离容器顶部 10 像素 */
     right: 10px;
-    /* 距离容器右侧 10 像素 */
     font-size: 24px;
-    /* 字体大小设为 24 像素 */
     color: #000;
-    /* 按钮颜色设为黑色 */
     cursor: pointer;
-    /* 鼠标悬停在按钮上时，显示为指针形状 */
     display: none;
-    /* 默认隐藏按钮 */
+    /* 默认隐藏，JS 控制显示 */
 }
 
-/* 水印文字样式 */
+/* === 模态框水印文字 === */
 .Photo-watermark {
     position: absolute;
     bottom: 10px;
-    /* 距离模态框底部 10px */
     right: 25px;
-    /* 距离模态框右侧 10px */
     font-size: 24px;
-    /* 字体大小 */
     color: rgb(138, 138, 138);
-    /* 半透明白色 */
+    /* 灰色水印 */
     font-family: 'Bauhaus 93', sans-serif;
-    /* 使用 Bauhaus 93 字体 */
     pointer-events: none;
-    /* 禁止水印响应点击事件 */
+    /* 不可被点击 */
     z-index: 1001;
-    /* 设置比模态框内容更高的层级 */
 }
