@@ -8,9 +8,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="../../Favicon/moyai_1f5ff.png" />
     <link rel="stylesheet" href="../../../CSS/Main.css"> <!-- 引用外置CSS文件 -->
     <link rel="stylesheet" href="../../../CSS/Menu.css"> <!-- 引用外置CSS文件 -->
-    <link rel="stylesheet" href="../../../CSS/photo-gallery.css"> <!-- 引用外置CSS文件 -->
     <link rel="stylesheet" href="../../../CSS/gallery.css"> <!-- 引用外置CSS文件 -->
-    <link rel="icon" type="image/png" sizes="32x32" href="../../../Favicon/moyai_1f5ff.png" />
 
     <style>
         body {
@@ -60,6 +58,13 @@
 
             <button class="scroll-btn right">&#9654;</button>
         </div>
+        <div class=" gallery-caption">
+            <p>##关于"自然系列"##</p>
+            <p>继续尝试新的风格和题材，部分树木有现实参考</p>
+            <p>取自我最喜欢的一颗树，愿她亘古长青</p>
+            <p></p>涉及的软件包括Speedtree，Blender。</p>
+            <p>制作于2025</p>
+        </div>
     </main>
 </body>
 
@@ -74,28 +79,6 @@
 
     scrollRightBtn.addEventListener("click", () => {
         gallery.scrollBy({ left: 300, behavior: 'smooth' });
-    });
-
-    // 模态框逻辑
-    const modal = document.getElementById("modal");
-    const modalImg = document.getElementById("modalImg");
-    const closeModal = document.getElementById("closeModal");
-
-    document.querySelectorAll(".gallery-item img").forEach(img => {
-        img.addEventListener("click", () => {
-            modal.style.display = "block";
-            modalImg.src = img.src;
-        });
-    });
-
-    closeModal.addEventListener("click", () => {
-        modal.style.display = "none";
-    });
-
-    window.addEventListener("click", (e) => {
-        if (e.target === modal) {
-            modal.style.display = "none";
-        }
     });
 </script>
 

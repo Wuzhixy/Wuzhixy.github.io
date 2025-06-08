@@ -9,10 +9,6 @@
     <link rel="stylesheet" href="../../../CSS/Main.css"> <!-- 引用外置CSS文件 -->
     <link rel="stylesheet" href="../../../CSS/Menu.css"> <!-- 引用外置CSS文件 -->
     <link rel="stylesheet" href="../../../CSS/gallery.css"> <!-- 引用外置CSS文件 -->
-    <script src="../../../JavaScript/PhotoModal.js"></script> <!-- 引用外置JavaScript文件 -->
-    <link rel="icon" type="image/png" sizes="32x32" href="../../../Favicon/moyai_1f5ff.png" />
-
-
 
     <style>
         body {
@@ -85,9 +81,9 @@
 
             <button class="scroll-btn right">&#9654;</button>
         </div>
-        <div class="photo-caption">
-            <p>##关于"南城以南"</p>
-            <p>算是我第一次认真出去拍照，设备仅仅是我的手机，像素也不是很高，后期调色的痕迹也很重，我在这座城市里上学生活了七年，我把我的青春留在了这座城市。也在这座城市遇到了一群很可爱的人，我想我会永远记得这座城市，即使在毕业之后并没有选择留下来。
+        <div class=" gallery-caption">
+            <p>##关于"南城以南"##</p>
+            <p>算是我第一次认真出去拍照，设备仅仅是我的手机，像素也不是很高，后期调色的痕迹也很重，我在这座城市里上学生活了七年，我把我的青春和无知留在了这座城市。也在这座城市遇到了一群很可爱的人，我会永远记得这座城市，即使在毕业之后并没有选择留下来。
             </p>
             <p>拍摄于2021年6月</p>
         </div>
@@ -104,28 +100,6 @@
 
         scrollRightBtn.addEventListener("click", () => {
             gallery.scrollBy({ left: 300, behavior: 'smooth' });
-        });
-
-        // 模态框逻辑
-        const modal = document.getElementById("modal");
-        const modalImg = document.getElementById("modalImg");
-        const closeModal = document.getElementById("closeModal");
-
-        document.querySelectorAll(".gallery-item img").forEach(img => {
-            img.addEventListener("click", () => {
-                modal.style.display = "block";
-                modalImg.src = img.src;
-            });
-        });
-
-        closeModal.addEventListener("click", () => {
-            modal.style.display = "none";
-        });
-
-        window.addEventListener("click", (e) => {
-            if (e.target === modal) {
-                modal.style.display = "none";
-            }
         });
     </script>
 </body>

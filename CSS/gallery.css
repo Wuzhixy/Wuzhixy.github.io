@@ -83,31 +83,15 @@
 }
 
 /* 作品文字说明区域 */
-.caption {
-    padding: 10px 15px;
-    /* 内边距 */
-    text-align: center;
-    /* 文本居中 */
-}
-
-/* 作品标题样式 */
-.caption h3 {
-    margin: 0;
-    /* 去除外边距 */
-    font-size: 18px;
-    /* 字体大小为 18px */
-    color: #333;
-    /* 深灰色字体 */
-}
-
-/* 作品描述样式 */
-.caption p {
-    margin: 5px 0 0;
+.gallery-caption {
+    margin: 50px 120px 50px;
     /* 上外边距 5px，左右和下为 0 */
     font-size: 14px;
     /* 较小字体 */
     color: #666;
     /* 浅灰色字体 */
+    text-align: left;
+    width: 700px;
 }
 
 /* 左右滚动按钮通用样式 */
