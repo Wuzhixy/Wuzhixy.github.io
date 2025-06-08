@@ -57,28 +57,33 @@
     /* 添加平滑动画效果 */
 }
 
-/* 拓展菜单样式 */
 .menu-item {
     position: relative;
-    /* 使拓展菜单相对于菜单按钮定位 */
+    display: flex;
+    justify-content: center;
+    /* 子项水平居中 */
+    align-items: center;
+    /* 子项垂直居中 */
 }
 
 .dropdown {
     display: none;
     position: absolute;
     top: 100%;
-    left: auto;
-    background-color: rgba(255, 255, 255, 0.048);
-    /* 半透明白色背景 */
-    z-index: 1;
+    /* 紧贴 menu-item 底部 */
+    left: 50%;
+    /* 水平居中 */
+    transform: translateX(-50%);
+    /* 以自身宽度居中 */
+    background-color: rgba(0, 0, 0, 0.285);
+    padding: 10px;
+    border-radius: 6px;
     font-size: 18px;
-    /* 设置字体大小 */
     letter-spacing: 7px;
-    /* 设置字间距 */
-    text-decoration: none;
-    /* 去掉默认的下划线 */
     transition: all 0.3s ease;
-    /* 添加过渡效果，平滑的变化 */
+    z-index: 1;
+    white-space: nowrap;
+    /* 避免内容换行 */
 }
 
 .dropdown a {

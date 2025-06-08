@@ -8,8 +8,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="../../Favicon/moyai_1f5ff.png" />
     <link rel="stylesheet" href="../../../CSS/Main.css"> <!-- 引用外置CSS文件 -->
     <link rel="stylesheet" href="../../../CSS/Menu.css"> <!-- 引用外置CSS文件 -->
-    <link rel="stylesheet" href="../../../CSS/photo-gallery.css"> <!-- 引用外置CSS文件 -->
-    <link rel="stylesheet" href="../../../CSS/keyframes.css"> <!-- 引用外置CSS文件 -->
+    <link rel="stylesheet" href="../../../CSS/gallery.css"> <!-- 引用外置CSS文件 -->
     <script src="../../../JavaScript/PhotoModal.js"></script> <!-- 引用外置JavaScript文件 -->
     <link rel="icon" type="image/png" sizes="32x32" href="../../../Favicon/moyai_1f5ff.png" />
 
@@ -40,8 +39,11 @@
             <div class="menu-item">
                 <p class="menu-button">ART</p>
                 <div class="dropdown">
-                    <a href="../Photography/Photography.html">摄影相册</a>
-                    <a href="../3D Art/3D Art.html">3D艺术</a>
+                    <a href="../3D Art/Project Nature/Project Nature.html">3D 自然系列</a>
+                    <a href="../3D Art/Project City/Project City.html">3D 城市系列</a>
+                    <a href="../3D Art/Project Practice/Project Practice.html">3D 日常系列</a>
+                    <a href="../3D Art/Project Practice/Project Practice.html">3D 练习</a>
+                    <a href="../Photography/south of south/south of south.html">摄影 南城以南</a>
                     <a href="../Basis Art/Basis Art.html">美术基础</a>
                 </div>
             </div>
@@ -50,6 +52,44 @@
 
 
     <main class="main-content">
+        <div class="gallery-container">
+            <button class="scroll-btn left">&#9664;</button>
+
+            <div class="gallery-container" id="gallery">
+                <div class="gallery-item">
+                    <img src="images/01.jpg">
+                </div>
+
+                <div class="gallery-item">
+                    <img src="images/02.jpg">
+                </div>
+
+                <div class="gallery-item">
+                    <img src="images/03.jpg">
+                </div>
+
+                <div class="gallery-item">
+                    <img src="images/04.jpg">
+                </div>
+
+                <div class="gallery-item">
+                    <img src="images/05.jpg">
+                </div>
+
+                <div class="gallery-item">
+                    <img src="images/06.jpg">
+                </div>
+
+                <div class="gallery-item">
+                    <img src="images/07.jpg">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/08.jpg">
+                </div>
+            </div>
+
+            <button class="scroll-btn right">&#9654;</button>
+        </div>
         <div class=" photo-caption">
             <p>##关于"半吊子美术"</p>
             <p>在最开始接触美术的两年，我并不算有什么美术天赋，学校安排了素描色彩等等美术基础的课程，虽然没有正规美术院校那样的艺术氛围和师资，大多数还是靠自己，但是我很感谢我的一位朋友，她的美术基础比我优秀很多，也教了我很多关于色彩，关于美术，虽然之后我依然画的很烂，再之后她去了正经的艺术院校继续深造，祝她越来越好。
@@ -57,19 +97,41 @@
             <p>它们并不完美，感谢驻足</p>
         </div>
     </main>
+    <script>
+        const gallery = document.getElementById("gallery");
+        const scrollLeftBtn = document.querySelector(".scroll-btn.left");
+        const scrollRightBtn = document.querySelector(".scroll-btn.right");
 
+        scrollLeftBtn.addEventListener("click", () => {
+            gallery.scrollBy({ left: -300, behavior: 'smooth' });
+        });
 
-    <!-- 模态框 -->
-    <div id="photoModal" class="Photo-modal">
-        <div class="Photo-modal-content">
-            <span class="Photo-close-btn" id="closeBtn">&times;</span>
-            <img id="modalImage" src="" alt="放大的图片">
-            <div class="Photo-watermark">WUZHI</div> <!-- 添加水印 -->
-        </div>
+        scrollRightBtn.addEventListener("click", () => {
+            gallery.scrollBy({ left: 300, behavior: 'smooth' });
+        });
 
+        // 模态框逻辑
+        const modal = document.getElementById("modal");
+        const modalImg = document.getElementById("modalImg");
+        const closeModal = document.getElementById("closeModal");
 
+        document.querySelectorAll(".gallery-item img").forEach(img => {
+            img.addEventListener("click", () => {
+                modal.style.display = "block";
+                modalImg.src = img.src;
+            });
+        });
 
-        <script src="/JavaScript/PhotoModal.js"></script>
+        closeModal.addEventListener("click", () => {
+            modal.style.display = "none";
+        });
+
+        window.addEventListener("click", (e) => {
+            if (e.target === modal) {
+                modal.style.display = "none";
+            }
+        });
+    </script>
 
 </body>
 

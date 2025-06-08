@@ -1,0 +1,208 @@
+/* 相册外层容器样式 */
+.gallery-wrapper {
+    position: relative;
+    /* 作为绝对定位元素的参照 */
+    overflow: hidden;
+    /* 超出部分隐藏 */
+    width: 100%;
+    /* 占据整个父级宽度 */
+    padding: 40px 0;
+    /* 上下内边距 40px */
+    background-color: #f8f8f8;
+    /* 更浅的灰色背景 */
+    display: flex;
+    /* 启用 Flex 布局 */
+    justify-content: center;
+    /* 水平居中对齐子项 */
+    align-items: center;
+    /* 垂直居中对齐子项 */
+    height: 100vh;
+    /* 占满整个视口高度 */
+}
+
+/* 相册内容容器样式 */
+.gallery-container {
+    display: flex;
+    /* 启用 Flex 布局（横向排列） */
+    align-items: center;
+    /* 垂直方向居中对齐 */
+    overflow-x: auto;
+    /* 允许横向滚动 */
+    scroll-behavior: smooth;
+    /* 平滑滚动效果 */
+    gap: 20px;
+    /* 子项之间的间距 */
+    padding: 0 60px;
+    /* 左右内边距 */
+    height: 400px;
+    /* 高度固定为 400px */
+    margin: 0 auto;
+    /* 水平居中 */
+    align-self: center;
+    /* 自身在 Flex 父容器中居中 */
+
+    scrollbar-width: none;
+    /* Firefox 隐藏滚动条 */
+    -ms-overflow-style: none;
+    /* IE 和 Edge 隐藏滚动条 */
+}
+
+/* Chrome/Safari 隐藏横向滚动条 */
+.gallery-container::-webkit-scrollbar {
+    display: none;
+}
+
+/* 相册项样式 */
+.gallery-item {
+    min-width: 300px;
+    /* 最小宽度 300px，允许横向排列 */
+    height: 400px;
+    /* 高度固定为 400px */
+    flex-shrink: 0;
+    /* 防止在 Flex 中被压缩 */
+    background: rgb(255, 255, 255);
+    /* 白色背景 */
+    overflow: hidden;
+    /* 隐藏内容溢出 */
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+    /* 阴影效果 */
+    transition: transform 0.3s;
+    /* 缩放动画效果 */
+}
+
+/* 鼠标悬停时放大 */
+.gallery-item:hover {
+    transform: scale(1.03);
+    /* 放大 3% */
+}
+
+/* 图片样式 */
+.gallery-item img {
+    height: 100%;
+    /* 图片填满容器高度 */
+}
+
+/* 作品文字说明区域 */
+.caption {
+    padding: 10px 15px;
+    /* 内边距 */
+    text-align: center;
+    /* 文本居中 */
+}
+
+/* 作品标题样式 */
+.caption h3 {
+    margin: 0;
+    /* 去除外边距 */
+    font-size: 18px;
+    /* 字体大小为 18px */
+    color: #333;
+    /* 深灰色字体 */
+}
+
+/* 作品描述样式 */
+.caption p {
+    margin: 5px 0 0;
+    /* 上外边距 5px，左右和下为 0 */
+    font-size: 14px;
+    /* 较小字体 */
+    color: #666;
+    /* 浅灰色字体 */
+}
+
+/* 左右滚动按钮通用样式 */
+.scroll-btn {
+    color: #828282;
+    position: absolute;
+    /* 绝对定位 */
+    z-index: 10;
+    /* 位于最上层 */
+    background: rgba(255, 255, 255, 0);
+    /* 半透明白底 */
+    border: none;
+    /* 去除边框 */
+    font-size: 30px;
+    /* 字体大小 */
+    cursor: pointer;
+    /* 鼠标样式为手型 */
+    padding: 8px 14px;
+    /* 内边距 */
+    user-select: none;
+    /* 禁止选中按钮文字 */
+}
+
+/* 左滚动按钮定位 */
+.scroll-btn.left {
+    left: 20px;
+    /* 靠左 20px */
+}
+
+/* 右滚动按钮定位 */
+.scroll-btn.right {
+    right: 20px;
+    /* 靠右 20px */
+}
+
+/* 模态框背景遮罩 */
+.modal {
+    display: none;
+    /* 初始不显示 */
+    position: fixed;
+    /* 固定定位 */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    /* 占满整个视口宽度 */
+    height: 100vh;
+    /* 占满整个视口高度 */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* 半透明黑色背景 */
+    z-index: 1000;
+    /* 确保显示在顶层 */
+    display: flex;
+    /* Flex 布局 */
+    justify-content: center;
+    /* 水平居中 */
+    align-items: center;
+    /* 垂直居中 */
+}
+
+/* 模态框内容区域 */
+.modal-content {
+    background-color: #fff;
+    /* 白色背景 */
+    border-radius: 8px;
+    /* 圆角 */
+    padding: 20px;
+    /* 内边距 */
+    width: 90%;
+    /* 最大宽度为视口的 90% */
+    max-width: 75vh;
+    /* 宽度限制为 75vh */
+    max-height: 80vh;
+    /* 高度限制为 80vh */
+    overflow-y: auto;
+    /* 垂直方向可滚动 */
+    box-sizing: border-box;
+    /* 包括 padding 在内计算宽度 */
+    position: relative;
+    /* 相对定位，便于添加子元素 */
+}
+
+/* 隐藏关闭按钮（如使用） */
+.close {
+    display: none;
+}
+
+/* 为模态内容添加滚动条样式 */
+.modal-content::-webkit-scrollbar {
+    width: 8px;
+    /* 滚动条宽度 */
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    /* 滚动条拖动条颜色 */
+    border-radius: 4px;
+    /* 圆角 */
+}
