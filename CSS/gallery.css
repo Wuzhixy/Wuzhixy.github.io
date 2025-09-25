@@ -40,7 +40,6 @@
     /* 水平居中 */
     align-self: center;
     /* 自身在 Flex 父容器中居中 */
-
     scrollbar-width: none;
     /* Firefox 隐藏滚动条 */
     -ms-overflow-style: none;
@@ -68,6 +67,12 @@
     /* 阴影效果 */
     transition: transform 0.3s;
     /* 缩放动画效果 */
+    display: flex;
+    /* 纵向布局 */
+    flex-direction: column;
+    /* 上图下文 */
+    border-radius: 8px;
+    /* 可选：更像一张卡片 */
 }
 
 /* 鼠标悬停时放大 */
@@ -91,8 +96,14 @@
     color: #666;
     /* 浅灰色字体 */
     text-align: left;
-    width: 750px;
+    width: 700px;
 }
+
+/* 悬停放大效果保持不变 */
+.gallery-item:hover {
+    transform: scale(1.03);
+}
+
 
 /* 左右滚动按钮通用样式 */
 .scroll-btn {

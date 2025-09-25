@@ -36,8 +36,8 @@
                 <p class="menu-button">ART</p>
                 <div class="dropdown">
                     <a href="../../3D Art/Project Nature/Project Nature.html">3D 自然系列</a>
-                    <a href="../Project City/Project City.html">3D 城市系列</a>
-                    <a href="../Project Memory/Project Memory.html">3D 记忆系列</a>
+                    <a href="../../3D Art/Project City/Project City.html">3D 城市系列</a>
+                    <a href="../../3D Art/Project Memory/Project Memory.html">3D 记忆系列</a>
                     <a href="../../3D Art/Project Practice/Project Practice.html">3D 日常练习</a>
                     <a href="../../Photography/south of south/south of south.html">摄影 南城以南</a>
                     <a href="../../Basis Art/Basis Art.html">美术基础</a>
@@ -45,44 +45,38 @@
             </div>
         </div>
     </div>
-
     <main class="main-content">
         <div class="gallery-container">
             <button class="scroll-btn left">&#9664;</button>
 
             <div class="gallery-container" id="gallery">
                 <div class="gallery-item">
-                    <img src="images/Bedroom.png">
+
                 </div>
 
-                <div class="gallery-item">
-                    <img src="images/atelier.png">
-                </div>
-
-                <button class="scroll-btn right">&#9654;</button>
             </div>
+
+            <button class="scroll-btn right">&#9654;</button>
         </div>
         <div class=" gallery-caption">
-            <p>##关于"记忆系列"##</p>
-            <p>尝试复刻曾经的卧室和画室，后处理做了风格化处理，抹掉了材质，单纯用布光和世界环境，也是氛围和影调的练习</p>
-            <p>记录一些曾经生活学习工作过的地方，保留在数字世界的记忆</p>
-            <p>制作于2024</p>
+            <p>##关于"游戏动画"##</p>
+
         </div>
     </main>
+
+    <script>
+        const gallery = document.getElementById("gallery");
+        const scrollLeftBtn = document.querySelector(".scroll-btn.left");
+        const scrollRightBtn = document.querySelector(".scroll-btn.right");
+
+        scrollLeftBtn.addEventListener("click", () => {
+            gallery.scrollBy({ left: -300, behavior: 'smooth' });
+        });
+
+        scrollRightBtn.addEventListener("click", () => {
+            gallery.scrollBy({ left: 300, behavior: 'smooth' });
+        });
+    </script>
 </body>
-
-<script>
-    const gallery = document.getElementById("gallery");
-    const scrollLeftBtn = document.querySelector(".scroll-btn.left");
-    const scrollRightBtn = document.querySelector(".scroll-btn.right");
-
-    scrollLeftBtn.addEventListener("click", () => {
-        gallery.scrollBy({ left: -300, behavior: 'smooth' });
-    });
-
-    scrollRightBtn.addEventListener("click", () => {
-        gallery.scrollBy({ left: 300, behavior: 'smooth' });
-    });
-</script>
 
 </html>

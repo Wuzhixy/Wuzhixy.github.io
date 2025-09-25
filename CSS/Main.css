@@ -3,7 +3,7 @@ html {
     margin: 0;
     padding: 0;
     height: 100%;
-    font-family: "YouYuan";
+    font-family: "Noto Serif SC";
     /* 设置全局字体 */
 
 }
@@ -54,7 +54,7 @@ body {
 
 /* 页眉样式 */
 .headertext {
-    font-size: 28px;
+    font-size: 30px;
     /* 字体大小 */
     margin: 0;
     /* 移除默认外边距 */
@@ -82,7 +82,7 @@ body {
     width: 100%;
     color: #ffffff;
     text-align: center;
-    padding: 10px 0;
+    padding: 10px 0%;
     z-index: 1000;
     box-sizing: border-box;
 }
