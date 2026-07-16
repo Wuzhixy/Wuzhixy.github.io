@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-07-17",
+  "items": [
+    {
+      "id": "about",
+      "type": "page",
+      "title": "关于雾质",
+      "path": "/about/"
+    },
+    {
+      "id": "axis-i",
+      "type": "project",
+      "series": "axis",
+      "title": "精神绿洲",
+      "path": "/projects/axis-i/",
+      "status": "released",
+      "version": "0.1.0",
+      "download": "https://github.com/Wuzhixy/Wuzhixy.github.io/releases/download/axis-i-v0.1.0/axis-i-xiangzhang-win64.zip"
+    },
+    {
+      "id": "axis-ii",
+      "type": "project",
+      "series": "axis",
+      "title": "独立游戏",
+      "path": "/projects/axis-ii/",
+      "status": "in-progress"
+    },
+    {
+      "id": "axis-iii",
+      "type": "project",
+      "series": "axis",
+      "title": "游戏动画",
+      "path": "/projects/axis-iii/",
+      "status": "archiving"
+    },
+    {
+      "id": "3d-nature",
+      "type": "work",
+      "category": "3d",
+      "title": "自然系列",
+      "path": "/works/3d-nature/",
+      "year": "2025",
+      "cover": "/assets/images/works/3d-nature/camphor-tree.png"
+    },
+    {
+      "id": "3d-city",
+      "type": "work",
+      "category": "3d",
+      "title": "城市系列",
+      "path": "/works/3d-city/",
+      "year": "2024",
+      "cover": "/assets/images/works/3d-city/subway.png"
+    },
+    {
+      "id": "3d-memory",
+      "type": "work",
+      "category": "3d",
+      "title": "记忆系列",
+      "path": "/works/3d-memory/",
+      "year": "2024",
+      "cover": "/assets/images/works/3d-memory/bedroom.png"
+    },
+    {
+      "id": "3d-practice",
+      "type": "work",
+      "category": "3d",
+      "title": "日常练习",
+      "path": "/works/3d-practice/",
+      "year": "2024-2025",
+      "cover": "/assets/images/works/3d-practice/wutong-tree-01.png"
+    },
+    {
+      "id": "foundation-art",
+      "type": "work",
+      "category": "foundation-art",
+      "title": "美术基础",
+      "path": "/works/foundation-art/",
+      "year": "2021-2022",
+      "cover": "/assets/images/works/foundation-art/01.jpg"
+    },
+    {
+      "id": "south-of-south",
+      "type": "work",
+      "category": "photography",
+      "title": "南城以南",
+      "path": "/works/south-of-south/",
+      "year": "2021",
+      "cover": "/assets/images/works/south-of-south/01.jpg"
+    }
+  ]
+}
