@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="雾质的 3D 城市系列作品。">
+    <title>3D 城市系列 — WUZHI</title>
+    <link rel="canonical" href="https://wuzhixy.github.io/works/3d-city/">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/icons/favicon.png">
+    <link rel="stylesheet" href="/assets/styles/main.css">
+    <link rel="stylesheet" href="/assets/styles/navigation.css">
+    <link rel="stylesheet" href="/assets/styles/gallery.css">
+    <script src="/assets/scripts/site.js" defer></script>
+</head>
+
+<body>
+    <a class="skip-link" href="#main">跳到主要内容</a>
+    <header class="site-header">
+        <div class="site-header__inner">
+            <a class="site-logo" href="/" aria-label="WUZHI 首页">WUZHI</a>
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu"
+                aria-label="打开导航"><span></span></button>
+            <nav class="menu" id="site-menu" aria-label="主要导航">
+                <a href="/projects/axis-i/" class="menu-button">精神绿洲 / Axis I</a>
+                <a href="/projects/axis-ii/" class="menu-button">独立游戏 / Axis II</a>
+                <a href="/projects/axis-iii/" class="menu-button">游戏动画 / Axis III</a>
+                <details class="menu-item menu-more">
+                    <summary class="menu-button" aria-current="page">作品档案</summary>
+                    <div class="dropdown">
+                        <a href="/works/3d-nature/">3D 自然系列</a>
+                        <a href="/works/3d-city/" aria-current="page">3D 城市系列</a>
+                        <a href="/works/3d-memory/">3D 记忆系列</a>
+                        <a href="/works/3d-practice/">3D 日常练习</a>
+                        <a href="/works/south-of-south/">摄影 · 南城以南</a>
+                        <a href="/works/foundation-art/">美术基础</a>
+                    </div>
+                </details>
+                <a href="/about/" class="menu-button">关于雾质</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="project-page" id="main">
+        <header class="project-intro">
+            <div>
+                <p class="eyebrow">Archive / 3D Environment</p>
+                <h1 class="display-title project-title">城市系列</h1>
+            </div>
+            <div class="project-copy">
+                <p>大多数作品源自毕业设计动画短片的场景。后处理抹去了材质和部分细节，保留建筑空间的轮廓与气氛。</p>
+                <ul class="project-meta" aria-label="项目资料">
+                    <li>2024</li>
+                    <li>Environment</li>
+                    <li>Stylized</li>
+                </ul>
+            </div>
+        </header>
+
+        <section class="gallery-shell" aria-label="城市系列作品画廊">
+            <button class="scroll-btn left" type="button" aria-label="上一张作品" aria-controls="city-gallery">←</button>
+            <div class="gallery-track" id="city-gallery" tabindex="0" data-drag-scroll>
+                <figure class="gallery-item">
+                    <img src="/assets/images/works/3d-city/street.png" alt="风格化街道三维作品" loading="lazy">
+                </figure>
+                <figure class="gallery-item">
+                    <img src="/assets/images/works/3d-city/residential-building.png" alt="风格化住宅建筑三维作品" loading="lazy">
+                </figure>
+            </div>
+            <button class="scroll-btn right" type="button" aria-label="下一张作品" aria-controls="city-gallery">→</button>
+            <div class="gallery-hint">
+                <span>拖动浏览 / Drag to explore</span>
+                <span>03 works</span>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

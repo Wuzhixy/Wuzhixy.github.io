@@ -1,0 +1,37 @@
+@keyframes reveal-up {
+    from {
+        opacity: 0;
+        transform: translateY(2rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes soft-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.typing-text.typing {
+    animation: reveal-up 900ms var(--ease-out) both;
+}
+
+.home-lede {
+    animation: reveal-up 900ms 120ms var(--ease-out) both;
+}
+
+.home-index {
+    animation: reveal-up 900ms 240ms var(--ease-out) both;
+}
+
+.status-card {
+    animation: soft-in 800ms ease both;
+}
